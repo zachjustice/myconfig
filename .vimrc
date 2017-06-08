@@ -11,10 +11,13 @@ Plugin 'VundleVim/Vundle.vim'
 "PLUGINS
 Plugin 'Valloric/YouCompleteMe' " keyword completion
 Plugin 'tpope/vim-fugitive' " git commands from within vim
+Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
+Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
 
 "Color schemes
 Plugin 'tomasr/Molokai'
-Plugin 'flazz/vim-colorschemes' " A shit ton of c
+Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

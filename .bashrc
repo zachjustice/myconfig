@@ -1,5 +1,5 @@
-alias bashrc="vi ~/.bashrc"
-alias vimrc="vi ~/.vimrc"
+alias bashrc="vim ~/.bashrc"
+alias vimrc="vim ~/.vimrc"
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias resrc="source ~/.bashrc"
 

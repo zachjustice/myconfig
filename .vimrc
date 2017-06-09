@@ -1,4 +1,4 @@
-"------------------------------------------------------------
+""------------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -14,9 +14,9 @@ Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Quramy/vim-js-pretty-template'
 
 "Color schemes
-Plugin 'tomasr/Molokai'
 Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
 
 " All of your Plugins must be added before the following line
@@ -24,10 +24,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
 
 " Vim-Latex
 set grepprg=grep\ -nH\ $*
@@ -50,6 +46,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 filetype indent plugin on
 
 syntax enable
+colorscheme monokai
 
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
@@ -132,6 +129,9 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
+
+" pressing f2 toggles paste
+set pastetoggle=<F9>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search

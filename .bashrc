@@ -4,6 +4,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias resrc="source ~/.bashrc"
 
 alias vi="vim"
+alias config="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 
 function taile
 {

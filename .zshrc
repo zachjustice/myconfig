@@ -99,3 +99,7 @@ alias resrc="source ~/.bashrc"
 
 alias vi="vim"
 alias config="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
+
+# Make vim the default editor. (git commit won't error on merges)
+export VISUAL=vim
+export EDITOR="$VISUAL"

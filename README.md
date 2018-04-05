@@ -1,5 +1,6 @@
 ```
 echo .myconfig >> .gitignore
+echo README.md >> .gitignore
 git clone --bare https://github.com/zachjustice/myconfig.git ~/.myconfig
 function config {
    /usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME $@
@@ -14,10 +15,11 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+rm README.md
 ```
 
 Install vundle and plugins
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-$ vim +PluginInstall +qall
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 ```

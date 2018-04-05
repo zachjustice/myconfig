@@ -15,11 +15,11 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
-rm README.md
-```
 
-Install vundle and plugins
-```
+# Remove this README since you don't want that in your home directory
+rm README.md
+
+# Set up Vundle and install plugins.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```

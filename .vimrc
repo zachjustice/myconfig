@@ -9,7 +9,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 "PLUGINS
-Plugin 'Valloric/YouCompleteMe' " keyword completion
+"Plugin 'Valloric/YouCompleteMe' " keyword completion
 Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'tpope/vim-surround'

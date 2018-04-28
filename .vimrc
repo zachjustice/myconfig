@@ -9,9 +9,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 "PLUGINS
-Plugin 'Quramy/vim-js-pretty-template'
 " Plugin 'Valloric/YouCompleteMe' " keyword completion
+Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'

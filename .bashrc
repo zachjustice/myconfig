@@ -12,5 +12,6 @@ function taile
 
 # exports env vars for mom diary backend
 source ~/.saturday_env
+source ~/.advent_of_code_session
 
 alias psql-saturday-db="psql -h saturday-db.cn5cfkwaqjgw.us-east-1.rds.amazonaws.com -d triturus -p 5432 -U saturday_db_user"

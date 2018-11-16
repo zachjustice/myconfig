@@ -9,12 +9,14 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 "PLUGINS
-"Plugin 'Valloric/YouCompleteMe' " keyword completion
+" Plugin 'Valloric/YouCompleteMe' " keyword completion
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'Quramy/vim-js-pretty-template'
 
 "Color schemes
 Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
@@ -120,6 +122,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype javscript setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
 
 "------------------------------------------------------------
 " Mappings {{{1

@@ -90,15 +90,34 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshconfig="vi ~/.zshrc"
+ alias ohmyzsh="vi ~/.oh-my-zsh"
+SAVEHIST=100000
 
 alias bashrc="vim ~/.bashrc"
+alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias resrc="source ~/.bashrc"
+alias resrc="source ~/.zshrc"
 
 alias vi="vim"
 alias config="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
+alias cl="clear"
+
+# momdiary
+alias psql-saturday-db="psql -h saturday-db.cn5cfkwaqjgw.us-east-1.rds.amazonaws.com -d triturus -p 5432 -U saturday_db_user"
+
+# Secureworks workflow aliases
+alias ylca="yarn lint && git commit --amend"
+alias gcp="git add . && git commit --amend && git pohm"
+
+# gcloud aliases
+alias gc="gcloud"
+alias gcc="gc compute"
+alias gccf="gcc firewall-rules"
+
+# kubernetes
+alias k="kubectl"
+alias kc="kubectl config"
 
 # Make vim the default editor. (git commit won't error on merges)
 export VISUAL=vim
@@ -108,4 +127,14 @@ export EDITOR="$VISUAL"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 # Puth homebrew python first in path
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$HOME/Library/Python/3.6/bin/:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+eval $(thefuck --alias)
+
+# nvm stuff
+#export NVM_DIR="$HOME/.nvm" 
+#. "/usr/local/opt/nvm/nvm.sh"
+
+# brew glcoud auto completion
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'

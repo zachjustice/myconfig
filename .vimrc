@@ -16,7 +16,6 @@ Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-fugitive' " git commands from within vim
 Plugin 'tpope/vim-surround'
 
 "Color schemes
@@ -123,6 +122,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype javscript setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
 
 "------------------------------------------------------------
 " Mappings {{{1

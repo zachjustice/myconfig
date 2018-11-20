@@ -1,4 +1,4 @@
-""------------------------------------------------------------
+"------------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -7,9 +7,9 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 "PLUGINS
-" Plugin 'Valloric/YouCompleteMe' " keyword completion
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe' " keyword completion
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive' " git commands from within vim
@@ -17,6 +17,9 @@ Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ddollar/nerdcommenter'
 
 "Color schemes
 Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
@@ -26,6 +29,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" Airline
+let g:airline_powerline_fonts = 1
+set t_Co=256
 
 " Vim-Latex
 set grepprg=grep\ -nH\ $*
@@ -131,19 +138,37 @@ autocmd Filetype json setlocal ts=2 sts=2 sw=2
 " Mappings {{{1
 "
 " Useful mappings
+" set <leader> to <space>
+let mapleader = " "
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
 
-" pressing f2 toggles paste
+" pressing f9 toggles paste
 set pastetoggle=<F9>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 "Use jk for esc
 :inoremap jk <ESC>
+
+" easy navigation between splits
+" instead of ctrl-w then j, it’s just ctrl-j
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Open new split panes to right and bottom, which feels more natural than Vim’s default
+set splitbelow
+set splitright
 "------------------------------------------------------------
+"
+" Open NERDTree automatically when vim starts up
+autocmd vimenter * NERDTree

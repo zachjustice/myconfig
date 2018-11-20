@@ -93,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="vi ~/.zshrc"
  alias ohmyzsh="vi ~/.oh-my-zsh"
 SAVEHIST=100000
+HISTFILESIZE=5000
 
 alias bashrc="vim ~/.bashrc"
 alias zshrc="vim ~/.zshrc"
@@ -100,11 +101,8 @@ alias vimrc="vim ~/.vimrc"
 alias resrc="source ~/.zshrc"
 
 alias vi="vim"
-alias config="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
+alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 alias cl="clear"
-
-# momdiary
-alias psql-saturday-db="psql -h saturday-db.cn5cfkwaqjgw.us-east-1.rds.amazonaws.com -d triturus -p 5432 -U saturday_db_user"
 
 # Secureworks workflow aliases
 alias ylca="yarn lint && git commit --amend"
@@ -125,10 +123,12 @@ export EDITOR="$VISUAL"
 
 # Put homebrew programs first in $PATH
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-
-# Puth homebrew python first in path
 export PATH="$HOME/Library/Python/3.6/bin/:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=~/Library/Python/2.7/bin:$PATH # required by elasticbeanstalk cli
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
 eval $(thefuck --alias)
 
 # nvm stuff
@@ -138,3 +138,19 @@ eval $(thefuck --alias)
 # brew glcoud auto completion
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+alias ls='ls -GFh'
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+# required by android studio / ionic
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# golang
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+

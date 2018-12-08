@@ -11,7 +11,8 @@ brew update
 
 # brew UI apps
 brew cask install \
-    docker \ # the gui docker version different from the cli
+    # the gui docker version different from the cli
+    docker \
     iterm2 \
     google-chrome \
     firefox \

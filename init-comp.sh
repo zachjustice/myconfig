@@ -53,7 +53,8 @@ brew install \
     vim \
     wget \
     yarn \
-    zsh
+    zsh \
+    cmake
 
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc

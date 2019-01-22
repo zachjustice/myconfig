@@ -99,6 +99,7 @@ alias bashrc="vim ~/.bashrc"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias resrc="source ~/.zshrc"
+alias vim-install="vim +PluginInstall +qall"
 
 alias vi="vim"
 alias vim-install="vim +PluginInstall +qall"
@@ -143,7 +144,6 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 alias ls='ls -GFh'
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 
 # required by android studio / ionic
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk

@@ -59,7 +59,8 @@ brew install \
     vim \
     wget \
     yarn \
-    zsh
+    zsh \
+    cmake
 
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc
@@ -70,7 +71,7 @@ pip3 install awscli awsebcli
 echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
 # node packages
-npm install -g typescript
+yarn global add typescript
 
 # Git and Dotfiles
 bash <(curl -s https://gist.githubusercontent.com/zachjustice/2af3d5de17762d8478e7d58aff2bcf4c/raw/80362b70bab1366a61913a8f5ec7376e4ea88cce/setup_dotfiles.sh)

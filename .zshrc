@@ -104,6 +104,7 @@ alias vim-install="vim +PluginInstall +qall"
 alias vi="vim"
 alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 alias cl="clear"
+alias hgrep="history | grep"
 
 # Secureworks workflow aliases
 alias ylca="yarn lint && git commit --amend"
@@ -130,15 +131,14 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/Library/Python/2.7/bin:$PATH # required by elasticbeanstalk cli
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
-eval $(thefuck --alias)
 
 # nvm stuff
 #export NVM_DIR="$HOME/.nvm" 
 #. "/usr/local/opt/nvm/nvm.sh"
 
 # brew glcoud auto completion
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 alias ls='ls -GFh'
 

@@ -36,6 +36,9 @@ brew install \
     gradle \
     htop \
     jq \
+    vegeta \
+    rs/tap/jaggr \
+    rs/tap/jplot \
     kafka \
     kubernetes-cli \
     maven \

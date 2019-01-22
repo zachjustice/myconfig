@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ddollar/nerdcommenter'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 "Color schemes
 Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
@@ -172,3 +173,5 @@ set splitright
 "
 " Open NERDTree automatically when vim starts up
 autocmd vimenter * NERDTree
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+

@@ -27,10 +27,6 @@ Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
 " Airline
 let g:airline_powerline_fonts = 1
 set t_Co=256
@@ -166,12 +162,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <Shift><Shift>  :tabedit<Space>
+
 " Open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
 set splitright
 "------------------------------------------------------------
 "
 " Open NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-
+" autocmd vimenter * NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1

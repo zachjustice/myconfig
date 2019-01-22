@@ -1,5 +1,8 @@
 #! /usr/bin/bash
 
+# TODO chron job to update this brew cask leaves or whatever
+# TODO warning at some useful point
+
 # fix file permissions on half installed machines
 # sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
 xcode-select --install
@@ -11,7 +14,7 @@ brew update
 
 # brew UI apps
 brew cask install \
-    docker \ # the gui docker version different from the cli
+    docker \
     iterm2 \
     google-chrome \
     firefox \
@@ -30,6 +33,7 @@ brew cask install \
 
 # CLIs
 brew install \
+    clojure \
     docker \
     git \
     go \
@@ -38,6 +42,7 @@ brew install \
     jq \
     kafka \
     kubernetes-cli \
+    leiningen \
     maven \
     nginx \
     opencv \
@@ -50,6 +55,7 @@ brew install \
     the_silver_searcher \
     thefuck \
     tmux \
+    tree \
     vim \
     wget \
     yarn \

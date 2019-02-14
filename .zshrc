@@ -154,3 +154,25 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
+function jrnl () {
+    DIR=$(date +"$HOME/Code/mimir/journal/personal/%Y/%m/")
+    FILE=${DIR}$(date +"%d_%a.md" | tr '[:upper:]' '[:lower:]')
+    if [ ! -f "${FILE}" ]; then
+        TITLE=$(date +"%A, %B %d, %Y")
+        mkdir -p "${DIR}"
+        touch "${FILE}"
+        echo "# ${TITLE}\n" > "${FILE}"
+    fi
+}
+
+function todo () {
+    DIR=$(date +"$HOME/Code/mimir/journal/work/todos/%Y/%m/")
+    FILE=${DIR}$(date +"%d_%a.md" | tr '[:upper:]' '[:lower:]')
+    if [ ! -f "${FILE}" ]; then
+        TITLE=$(date +"%A, %B %d, %Y")
+        mkdir -p "${DIR}"
+        touch "${FILE}"
+        echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE" > "${FILE}"
+    fi
+}
+

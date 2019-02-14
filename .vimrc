@@ -172,3 +172,4 @@ set splitright
 " Open NERDTree automatically when vim starts up
 " autocmd vimenter * NERDTree
 let g:nerdtree_tabs_open_on_console_startup=1
+

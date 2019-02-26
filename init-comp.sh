@@ -1,5 +1,8 @@
 #! /usr/bin/bash
 
+# TODO chron job to update this brew cask leaves or whatever
+# TODO warning at some useful point
+
 # fix file permissions on half installed machines
 # sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
 xcode-select --install
@@ -30,6 +33,7 @@ brew cask install \
 
 # CLIs
 brew install \
+    clojure \
     docker \
     git \
     go \
@@ -38,6 +42,7 @@ brew install \
     jq \
     kafka \
     kubernetes-cli \
+    leiningen \
     maven \
     nginx \
     opencv \
@@ -50,10 +55,12 @@ brew install \
     the_silver_searcher \
     thefuck \
     tmux \
+    tree \
     vim \
     wget \
     yarn \
-    zsh
+    zsh \
+    cmake
 
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc
@@ -64,7 +71,7 @@ pip3 install awscli awsebcli
 echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
 
 # node packages
-npm install -g typescript
+yarn global add typescript
 
 # Git and Dotfiles
 bash <(curl -s https://gist.githubusercontent.com/zachjustice/2af3d5de17762d8478e7d58aff2bcf4c/raw/80362b70bab1366a61913a8f5ec7376e4ea88cce/setup_dotfiles.sh)

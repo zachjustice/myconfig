@@ -102,6 +102,7 @@ alias resrc="source ~/.zshrc"
 alias vim-install="vim +PluginInstall +qall"
 
 alias vi="vim"
+alias vim-install="vim +PluginInstall +qall"
 alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 alias cl="clear"
 
@@ -146,7 +147,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # required by android studio / ionic
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # golang
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
@@ -154,3 +155,11 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
+# dumb cobol stuff
+alias cfx="cobc -free -x"
+
+# jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+export PATH="$HOME/.jenv/shims:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)

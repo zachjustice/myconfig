@@ -18,8 +18,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
 Plugin 'ddollar/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
 "Color schemes

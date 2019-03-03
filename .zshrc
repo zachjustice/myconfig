@@ -171,8 +171,10 @@ function jrnl () {
         TITLE=$(date +"%A, %B %d, %Y")
         mkdir -p "${DIR}"
         touch "${FILE}"
-        echo "# ${TITLE}\n" > "${FILE}"
+        echo "# ${TITLE}\n\n" > "${FILE}"
+        git add "${FILE}"
     fi
+    vi "${FILE}"
 }
 
 function todo () {
@@ -182,7 +184,9 @@ function todo () {
         TITLE=$(date +"%A, %B %d, %Y")
         mkdir -p "${DIR}"
         touch "${FILE}"
-        echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE" > "${FILE}"
+        echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE\n" > "${FILE}"
+        git add "${FILE}"
     fi
+    vi "${FILE}"
 }
 

@@ -163,7 +163,9 @@ function jrnl () {
         mkdir -p "${DIR}"
         touch "${FILE}"
         echo "# ${TITLE}\n" > "${FILE}"
+        git add "${FILE}"
     fi
+    vi "${FILE}"
 }
 
 function todo () {
@@ -174,6 +176,8 @@ function todo () {
         mkdir -p "${DIR}"
         touch "${FILE}"
         echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE" > "${FILE}"
+        git add "${FILE}"
     fi
+    vi "${FILE}"
 }
 

@@ -21,3 +21,4 @@ export PATH=~/Library/Python/2.7/bin:$PATH
 HISTFILESIZE=5000
 
 source ~/.bashrc
+export PATH=$HOME/bin:$PATH

@@ -17,6 +17,7 @@ Plugin 'leafgarland/typescript-vim' " Syntax highlighting for typescript
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'bling/vim-airline'
 Plugin 'ddollar/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -24,6 +25,9 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 "Color schemes
 Plugin 'flazz/vim-colorschemes' " A shit ton of colorschemes
+
+"vim-repeat
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

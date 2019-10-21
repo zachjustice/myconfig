@@ -130,6 +130,7 @@ export PATH="$HOME/Library/Python/3.6/bin/:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/Library/Python/2.7/bin:$PATH # required by elasticbeanstalk cli
+export PATH=$HOME/bin:$PATH
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
@@ -147,7 +148,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # required by android studio / ionic
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # golang
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
@@ -158,26 +159,33 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 function jrnl () {
     DIR=$(date +"$HOME/Code/mimir/journal/personal/%Y/%m/")
     FILE=${DIR}$(date +"%d_%a.md" | tr '[:upper:]' '[:lower:]')
+
     if [ ! -f "${FILE}" ]; then
         TITLE=$(date +"%A, %B %d, %Y")
         mkdir -p "${DIR}"
         touch "${FILE}"
         echo "# ${TITLE}\n" > "${FILE}"
-        git add "${FILE}"
     fi
-    vi "${FILE}"
+
+    if [[ $1 ]]; then
+        vi "${FILE}"
+    fi
 }
 
 function todo () {
     DIR=$(date +"$HOME/Code/mimir/journal/work/todos/%Y/%m/")
     FILE=${DIR}$(date +"%d_%a.md" | tr '[:upper:]' '[:lower:]')
+
     if [ ! -f "${FILE}" ]; then
         TITLE=$(date +"%A, %B %d, %Y")
         mkdir -p "${DIR}"
         touch "${FILE}"
-        echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE" > "${FILE}"
-        git add "${FILE}"
+        echo "# ${TITLE}\n\n## TODO\n\n## IN PROGRESS\n\n## DONE\n" > "${FILE}"
     fi
-    vi "${FILE}"
+
+    if [[ $1 ]]; then
+        vi "${FILE}"
+    fi
 }
 
+export MAVEN_USERNAME=ag11023

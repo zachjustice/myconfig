@@ -189,4 +189,3 @@ function todo () {
     fi
     vi "${FILE}"
 }
-

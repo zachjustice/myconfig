@@ -33,6 +33,7 @@ brew cask install \
 
 # CLIs
 brew install \
+    cmake \
     clojure \
     docker \
     git \

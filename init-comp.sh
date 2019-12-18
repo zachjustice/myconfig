@@ -29,7 +29,7 @@ brew cask install \
     nordvpn \
     calibre \
     the-unarchiver \
-    java8
+    adoptopenjdk8
 
 # CLIs
 brew install \

@@ -57,7 +57,7 @@ brew install \
     thefuck \
     tmux \
     tree \
-    vegeta
+    vegeta \
     vim \
     wget \
     yarn \

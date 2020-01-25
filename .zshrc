@@ -165,7 +165,7 @@ export PATH="$HOME/.jenv/shims:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 function jrnl () {
-    DIR=$(date +"$HOME/Code/mimir/journal/personal/%Y/%m/")
+    DIR=$(date +"$HOME/Code/mimir/personal/%Y/%m/")
     FILE=${DIR}$(date +"%d_%a.md" | tr '[:upper:]' '[:lower:]')
     if [ ! -f "${FILE}" ]; then
         TITLE=$(date +"%A, %B %d, %Y")

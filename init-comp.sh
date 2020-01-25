@@ -29,10 +29,12 @@ brew cask install \
     nordvpn \
     calibre \
     the-unarchiver \
-    java8
+    adoptopenjdk8
 
 # CLIs
 brew install \
+    broot \
+    cmake \
     clojure \
     docker \
     git \
@@ -56,6 +58,7 @@ brew install \
     thefuck \
     tmux \
     tree \
+    vegeta \
     vim \
     wget \
     yarn \
@@ -98,6 +101,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 mkdir Code
 
 # steps w/ manual intervention
+mkdir ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "zach.j.justice@gmail.com"
 echo """
 Host *

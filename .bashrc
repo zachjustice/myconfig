@@ -5,9 +5,5 @@ alias vimrc="vim ~/.vimrc"
 alias resrc="source ~/.bashrc"
 
 alias vi="vim"
-alias config="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
+alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 
-function taile
-{
-    tail -f /var/log/apache2/error_log
-}

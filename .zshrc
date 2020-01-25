@@ -106,10 +106,6 @@ alias vim-install="vim +PluginInstall +qall"
 alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 alias cl="clear"
 
-# Secureworks workflow aliases
-alias ylca="yarn lint && git commit --amend"
-alias gcp="git add . && git commit --amend && git pohm"
-
 # gcloud aliases
 alias gc="gcloud"
 alias gcc="gc compute"
@@ -138,8 +134,8 @@ eval $(thefuck --alias)
 #. "/usr/local/opt/nvm/nvm.sh"
 
 # brew glcoud auto completion
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 alias ls='ls -GFh'
 
@@ -154,9 +150,6 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-
-# dumb cobol stuff
-alias cfx="cobc -free -x"
 
 # jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
@@ -189,4 +182,3 @@ function todo () {
     fi
     vi "${FILE}"
 }
-

@@ -35,11 +35,12 @@ brew cask install \
 
 # CLIs
 brew install \
-    fortune \
-    cowsay \
+    broot \
     clojure \
     cmake \
+    cowsay \
     docker \
+    fortune \
     git \
     gnupg \ 
     go \
@@ -65,6 +66,7 @@ brew install \
     thefuck \
     tmux \
     tree \
+    vegeta \
     vim \
     wget \
     yarn \

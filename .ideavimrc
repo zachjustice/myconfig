@@ -1,5 +1,5 @@
 source ~/.vimrc
-set multiple-cursors
-set surround
-set commentary
 set ideajoin
+set surround
+set multiple-cursors
+set commentary

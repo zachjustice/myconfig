@@ -62,7 +62,10 @@ plugins=(
   git
 )
 
+# Sourcing
 source $ZSH/oh-my-zsh.sh
+# broot
+# source /Users/zach.justice/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
 # User configuration
 
@@ -88,12 +91,10 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
- alias zshconfig="vi ~/.zshrc"
- alias ohmyzsh="vi ~/.oh-my-zsh"
-SAVEHIST=100000
-HISTFILESIZE=5000
+
+alias ohmyzsh="vi ~/.oh-my-zsh"
+HISTSIZE=2000
+SAVEHIST=2000
 
 alias bashrc="vim ~/.bashrc"
 alias zshrc="vim ~/.zshrc"
@@ -102,18 +103,9 @@ alias resrc="source ~/.zshrc"
 alias vim-install="vim +PluginInstall +qall"
 
 alias vi="vim"
-alias vim-install="vim +PluginInstall +qall"
 alias cfg="/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME"
 alias cl="clear"
-
-# gcloud aliases
-alias gc="gcloud"
-alias gcc="gc compute"
-alias gccf="gcc firewall-rules"
-
-# kubernetes
-alias k="kubectl"
-alias kc="kubectl config"
+alias ls='ls -GFh'
 
 # Make vim the default editor. (git commit won't error on merges)
 export VISUAL=vim
@@ -124,37 +116,15 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="$HOME/Library/Python/3.6/bin/:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH=~/Library/Python/2.7/bin:$PATH # required by elasticbeanstalk cli
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
-eval $(thefuck --alias)
-
-# nvm stuff
-#export NVM_DIR="$HOME/.nvm" 
-#. "/usr/local/opt/nvm/nvm.sh"
-
-# brew glcoud auto completion
-# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
-alias ls='ls -GFh'
+export SAM_CLI_TELEMETRY=0
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# required by android studio / ionic
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-# golang
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-test -d "${GOPATH}" || mkdir "${GOPATH}"
-test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export PATH="$HOME/.jenv/shims:$PATH"
-
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 function jrnl () {
@@ -181,4 +151,9 @@ function todo () {
         git add "${FILE}"
     fi
     vi "${FILE}"
+}
+
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 }

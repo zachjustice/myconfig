@@ -11,13 +11,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# required by android studio / ionic
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-
-# required by elasticbeanstalk cli
-export PATH=~/Library/Python/2.7/bin:$PATH
-
-# more history is always useful
 HISTFILESIZE=5000
 
 source ~/.bashrc

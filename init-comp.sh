@@ -1,15 +1,17 @@
 #! /usr/bin/bash
 
-# TODO chron job to update this brew cask leaves or whatever
-# TODO warning at some useful point
-
 # fix file permissions on half installed machines
 # sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
 xcode-select --install
 
+#######
+# Brew and Dev tools installation
+#######
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew tap caskroom/versions
+brew tap simplydanny/pass-extensions
 brew update
 
 # brew UI apps
@@ -33,10 +35,13 @@ brew cask install \
 
 # CLIs
 brew install \
-    cmake \
+    fortune \
+    cowsay \
     clojure \
+    cmake \
     docker \
     git \
+    gnupg \ 
     go \
     gradle \
     htop \
@@ -47,6 +52,9 @@ brew install \
     maven \
     nginx \
     opencv \
+    pass \
+    pass-update \
+    pinentry-mac \
     postgresql \
     pypy \
     python \
@@ -60,8 +68,7 @@ brew install \
     vim \
     wget \
     yarn \
-    zsh \
-    cmake
+    zsh
 
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc
@@ -79,7 +86,12 @@ bash <(curl -s https://gist.githubusercontent.com/zachjustice/2af3d5de17762d8478
 git config --global user.name "Zach Justice"
 git config --global user.email "zach.j.justice@gmail.com"
 
-# Vim and Tmux configuration
+#######
+## Vim and Tmux configuration
+#######
+
+# add prepatched powerline fonts for vim-airline
+pip3 install --user powerline-status
 git clone https://github.com/powerline/fonts.git --depth=1
 ( 
     cd fonts 
@@ -91,14 +103,18 @@ rm -rf fonts
 vim +PluginInstall +qall
 (
     cd ~/.vim/bundle/YouCompleteMe
-    ./install.py --clang-completer --java-completer --go-completer --rust-completer
+    ./install.py --clang-completer --java-completer --ts-completer
 )
 
 # mac configuration
 defaults write -g ApplePressAndHoldEnabled -bool false
 mkdir Code
 
-# steps w/ manual intervention
+######
+## Steps w/ manual intervention
+######
+
+# ssh
 mkdir ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "zach.j.justice@gmail.com"
 echo """
@@ -111,4 +127,16 @@ Host *
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 
+# gpg and pass conf
+git clone git@bitbucket.org:zachjustice123/harpocrates.git ~/.password-store/
+pass init zach.j.justice@gmail.com
+
+touch ~/.gnupg/gpg-agent.conf
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
+
+set VERSION 1.2.1
+curl -sSL https://github.com/passff/passff-host/releases/download/$VERSION/install_host_app.sh | bash -s -- firefox
+
 open /Applications/ShiftIt.app
+

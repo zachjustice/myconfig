@@ -124,16 +124,18 @@ Host *
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 
-# gpg and pass conf
-git clone git@bitbucket.org:zachjustice123/harpocrates.git ~/.password-store/
-pass init zach.j.justice@gmail.com
+#### 
+# gpg and pass conf (DEPRECATED)
+# git clone git@bitbucket.org:zachjustice123/harpocrates.git ~/.password-store/
+# pass init zach.j.justice@gmail.com
 
-touch ~/.gnupg/gpg-agent.conf
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-gpg-connect-agent reloadagent /bye
+# touch ~/.gnupg/gpg-agent.conf
+# echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+# gpg-connect-agent reloadagent /bye
 
-set VERSION 1.2.1
-curl -sSL https://github.com/passff/passff-host/releases/download/$VERSION/install_host_app.sh | bash -s -- firefox
+# set VERSION 1.2.1
+# curl -sSL https://github.com/passff/passff-host/releases/download/$VERSION/install_host_app.sh | bash -s -- firefox
+####
 
 open /Applications/ShiftIt.app
 

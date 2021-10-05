@@ -119,7 +119,6 @@ echo """
 Host *
     AddKeysToAgent yes
     UseKeychain yes
-    IdentityFile ~/.ssh/id_rsa>  UseKeychain yes
     IdentityFile ~/.ssh/id_rsa
 """ > ~/.ssh/config
 eval "$(ssh-agent -s)"

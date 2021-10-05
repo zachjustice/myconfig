@@ -8,14 +8,13 @@ xcode-select --install
 # Brew and Dev tools installation
 #######
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-brew tap caskroom/versions
-brew tap simplydanny/pass-extensions
+brew tap homebrew/cask-versions
 brew update
 
 # brew UI apps
-brew cask install \
+brew install cask \
     docker \
     iterm2 \
     google-chrome \
@@ -53,9 +52,6 @@ brew install \
     maven \
     nginx \
     opencv \
-    pass \
-    pass-update \
-    pinentry-mac \
     postgresql \
     pypy \
     python \

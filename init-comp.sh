@@ -14,7 +14,7 @@ brew tap homebrew/cask-versions
 brew update
 
 # brew UI apps
-brew install cask \
+brew install --cask \
     docker \
     iterm2 \
     google-chrome \

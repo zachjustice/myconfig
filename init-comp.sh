@@ -15,22 +15,25 @@ brew update
 
 # brew UI apps
 brew install --cask \
+    adoptopenjdk8 \
+    calibre \
     docker \
-    iterm2 \
-    google-chrome \
     firefox \
+    flux \
+    google-chrome \
     intellij-idea \
+    iterm2 \
+    krisp \
+    nordvpn \
+    obsidian \
+    postman \
     shiftit \
     spotify \
     sublime-text \
-    flux \
-    postman \
+    the-unarchiver \
     transmission \
     vlc \
-    nordvpn \
-    calibre \
-    the-unarchiver \
-    adoptopenjdk8
+    webstorm
 
 # CLIs
 brew install \

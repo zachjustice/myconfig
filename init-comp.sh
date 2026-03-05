@@ -15,6 +15,8 @@ brew update
 
   # brew UI apps
   brew install --cask \
+      1password \
+      ghostty \
       firefox \
       google-chrome \
       iterm2 \

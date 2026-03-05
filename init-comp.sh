@@ -13,63 +13,37 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew tap homebrew/cask-versions
 brew update
 
-# brew UI apps
-brew install --cask \
-    adoptopenjdk8 \
-    calibre \
-    docker \
-    firefox \
-    flux \
-    google-chrome \
-    intellij-idea \
-    iterm2 \
-    krisp \
-    nordvpn \
-    obsidian \
-    postman \
-    shiftit \
-    spotify \
-    sublime-text \
-    the-unarchiver \
-    transmission \
-    vlc \
-    webstorm
+  # brew UI apps
+  brew install --cask \
+      firefox \
+      google-chrome \
+      iterm2 \
+      obsidian \
+      the-unarchiver \
+      transmission \
+      vlc \
+      discord \
+      claude-code \
+      private-internet-access \
+      visual-studio-code \
+      rectangle \
+      flycut
 
-# CLIs
-brew install \
-    broot \
-    clojure \
-    cmake \
-    cowsay \
-    docker \
-    fortune \
-    git \
-    gnupg \ 
-    go \
-    gradle \
-    htop \
-    jq \
-    kafka \
-    kubernetes-cli \
-    leiningen \
-    maven \
-    nginx \
-    opencv \
-    postgresql \
-    pypy \
-    python \
-    sbt \
-    scala \
-    scipy \
-    the_silver_searcher \
-    thefuck \
-    tmux \
-    tree \
-    vegeta \
-    vim \
-    wget \
-    yarn \
-    zsh
+  # CLIs
+  brew install \
+      git \
+      gnupg \
+      htop \
+      jq \
+      python \
+      the_silver_searcher \
+      tmux \
+      tree \
+      vim \
+      wget \
+      yarn \
+      zsh
+
 
 # golang dev tools
 go get golang.org/x/tools/cmd/godoc

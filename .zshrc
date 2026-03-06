@@ -112,20 +112,15 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Put homebrew programs first in $PATH
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-export PATH="$HOME/Library/Python/3.6/bin/:$PATH"
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:~/bin:$PATH"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 export SAM_CLI_TELEMETRY=0
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-export PATH="$HOME/.jenv/shims:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 function jrnl () {
     DIR=$(date +"$HOME/Code/mimir/personal/%Y/%m/")

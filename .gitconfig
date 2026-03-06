@@ -1,0 +1,33 @@
+[user]
+	name = Zach Justice
+	email = github@zachjustice.dev
+[init]
+	defaultBranch = main
+[push]
+	default = current
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = zdiff3
+[fetch]
+	prune = true
+[diff]
+	algorithm = histogram
+	colorMoved = default
+[rerere]
+	enabled = true
+[core]
+	editor = vim
+	pager = less -FRX
+[credential]
+	helper = osxkeychain
+[color]
+	ui = auto
+[alias]
+	st = status -sb
+	co = checkout
+	br = branch
+	lg = log --oneline --graph --decorate --all
+	unstage = reset HEAD --
+	amend = commit --amend --no-edit
+	last = log -1 HEAD

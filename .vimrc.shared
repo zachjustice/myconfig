@@ -1,0 +1,23 @@
+set number
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set scrolloff=8
+set hidden
+set wildmenu
+set showcmd
+set backspace=indent,eol,start
+set autoindent
+set splitbelow
+set splitright
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+let mapleader = " "
+nnoremap Y y$
+inoremap jk <ESC>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

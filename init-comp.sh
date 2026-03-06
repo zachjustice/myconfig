@@ -1,7 +1,6 @@
 #! /usr/bin/bash
 
 # fix file permissions on half installed machines
-# sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
 xcode-select --install
 
 #######
@@ -33,6 +32,7 @@ brew update
 
   # CLIs
   brew install \
+      node \
       git \
       gnupg \
       htop \
@@ -46,14 +46,10 @@ brew update
       yarn \
       zsh
 
-
-# golang dev tools
-go get golang.org/x/tools/cmd/godoc
-go get github.com/golang/lint/golint
-
-# aws cli stuff via python
-pip3 install awscli awsebcli
-echo "export PATH=\"$(brew --prefix python)/libexec/bin:$PATH\"" >> ~/.zshrc
+# python
+pip install --upgrade pip
+pip install --user pipenv
+pip install virtualenv
 
 # node packages
 yarn global add typescript
@@ -77,11 +73,8 @@ git clone https://github.com/powerline/fonts.git --depth=1
 
 rm -rf fonts
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
-(
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.py --clang-completer --java-completer --ts-completer
-)
 
 # mac configuration
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -90,10 +83,7 @@ mkdir Code
 ######
 ## Steps w/ manual intervention
 ######
-
-# ssh
-mkdir ~/.ssh
-ssh-keygen -t rsa -b 4096 -C "zach.j.justice@gmail.com"
+ssh-keygen 
 echo """
 Host *
     AddKeysToAgent yes
@@ -102,19 +92,3 @@ Host *
 """ > ~/.ssh/config
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
-
-#### 
-# gpg and pass conf (DEPRECATED)
-# git clone git@bitbucket.org:zachjustice123/harpocrates.git ~/.password-store/
-# pass init zach.j.justice@gmail.com
-
-# touch ~/.gnupg/gpg-agent.conf
-# echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-# gpg-connect-agent reloadagent /bye
-
-# set VERSION 1.2.1
-# curl -sSL https://github.com/passff/passff-host/releases/download/$VERSION/install_host_app.sh | bash -s -- firefox
-####
-
-open /Applications/ShiftIt.app
-
